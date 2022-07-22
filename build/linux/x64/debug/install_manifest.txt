@@ -1,0 +1,10 @@
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/WeatherApp
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/bing0/Documents/flutter/WeatherApp/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
