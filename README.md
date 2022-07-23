@@ -9,8 +9,8 @@ A new Flutter Weather Forecasting Mobile Application project.
 - This app uses flutter packages like http, geolocator, rflutter_alert and flutter_spinkit
 # Demo 
 - This is the front view of the app:
-![Front View](https://github.com/[SUNILkhadka]/[WeatherApp]/tree/main/images/demo/front.png?raw=true)
-![City View](https://github.com/[SUNILkhadka]/[WeatherApp]/tree/main/images/demo/city.png?raw=true)
+![Front View](https://github.com/SUNILkhadka/WeatherApp/blob/main/images/demo/front.png?raw=true)
+![City View](https://github.com/SUNILkhadka/WeatherApp/blob/main/images/demo/city.png?raw=true)
 
 # Resources
 
