@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:WeatherApp/screens/city_screens.dart';
 import 'package:WeatherApp/services/weather.dart';
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
@@ -36,7 +37,6 @@ class _LocationScreenState extends State<LocationScreen> {
         weatherMessage = 'Not Found';
         cityName = '?';
         temperature = 0;
-        print(data);
       }
     });
   }
@@ -82,7 +82,27 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var typedName = await Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return CityScreen();
+                        }),
+                      );
+                      if (typedName != null) {
+                        var data = await weatherModel.getCityData(typedName);
+                        if (data == null) {
+                          Alert(
+                                  context: context,
+                                  type: AlertType.error,
+                                  title: "Error",
+                                  desc: "Error while fetching data.")
+                              .show();
+                        } else {
+                          changeUI(data);
+                        }
+                      }
+                    },
                     child: Icon(
                       Icons.location_city,
                       size: 50.0,

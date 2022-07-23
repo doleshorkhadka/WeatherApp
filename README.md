@@ -1,12 +1,18 @@
 # WeatherApp
+A new Flutter Weather Forecasting Mobile Application project.
 
-A new Flutter project.
+# App Overview
+- This is a simple user friendly app completly created in Flutter.
+- It shows the weather on the basis of your current location and given location city name.
 
-## Getting Started
+# Dependencies 
+- This app uses flutter packages like http, geolocator, rflutter_alert and flutter_spinkit
+# Demo 
+- This is the front view of the app:
+![Front View](https://github.com/[SUNILkhadka]/[WeatherApp]/tree/main/images/demo/front.png?raw=true)
+![City View](https://github.com/[SUNILkhadka]/[WeatherApp]/tree/main/images/demo/city.png?raw=true)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
+# Resources
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)

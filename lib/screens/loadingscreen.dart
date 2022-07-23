@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, prefer_const_constructors
 
 import 'package:WeatherApp/screens/locationscreen.dart';
 import 'package:WeatherApp/services/weather.dart';

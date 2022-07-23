@@ -14,7 +14,6 @@ class NetworkHelper {
       ),
     );
     if (response.statusCode == 200) {
-      print(response.statusCode);
       return jsonDecode(response.body);
     } else {
       print(response.statusCode);
