@@ -19,7 +19,6 @@ class NetworkHelper {
     } else {
       print(response.statusCode);
       print('Error fetching files from internet.');
-      return Exception('No data');
     }
   }
 }

@@ -3,6 +3,7 @@
 import 'package:WeatherApp/services/weather.dart';
 import 'package:flutter/material.dart';
 import '../utilities/constants.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class LocationScreen extends StatefulWidget {
   LocationScreen({required this.weatherData});
@@ -25,10 +26,18 @@ class _LocationScreenState extends State<LocationScreen> {
 
   void changeUI(dynamic data) {
     setState(() {
-      temperature = data['main']['temp'].toInt();
-      cityName = data['name'];
-      weatherIcon = weatherModel.getWeatherIcon(data['weather'][0]['id']);
-      weatherMessage = weatherModel.getMessage(temperature!);
+      if (data != null) {
+        temperature = data['main']['temp'].toInt();
+        cityName = data['name'];
+        weatherIcon = weatherModel.getWeatherIcon(data['weather'][0]['id']);
+        weatherMessage = weatherModel.getMessage(temperature!);
+      } else {
+        weatherIcon = '😞';
+        weatherMessage = 'Not Found';
+        cityName = '?';
+        temperature = 0;
+        print(data);
+      }
     });
   }
 
@@ -54,7 +63,19 @@ class _LocationScreenState extends State<LocationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      var data = await weatherModel.getWeatherData();
+                      if (data == null) {
+                        Alert(
+                                context: context,
+                                type: AlertType.error,
+                                title: "Error",
+                                desc: "Error while fetching data.")
+                            .show();
+                      } else {
+                        changeUI(data);
+                      }
+                    },
                     child: Icon(
                       Icons.near_me,
                       size: 50.0,

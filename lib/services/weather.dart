@@ -1,4 +1,19 @@
+import '../services/location.dart';
+import '../services/networking.dart';
+import '../utilities/constants.dart';
+
 class WeatherModel {
+  Future<dynamic> getWeatherData() async {
+    Location location = Location();
+    await location.getCurrentLocation();
+    NetworkHelper ntw = NetworkHelper(
+      url:
+          '$kopenWeatherUrl?lat=${location.latitude}&lon=${location.longitude}&appid=$kapiKey&units=metric',
+    );
+    var weatherData = await ntw.getData();
+    return weatherData;
+  }
+
   String getWeatherIcon(int condition) {
     if (condition < 300) {
       return '🌩';
