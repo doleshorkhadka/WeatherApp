@@ -1,0 +1,1 @@
+const kapiKey = '6a89b9580e70b960513cb9888386a521';

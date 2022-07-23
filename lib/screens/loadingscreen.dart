@@ -1,10 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:WeatherApp/screens/locationscreen.dart';
 import 'package:flutter/material.dart';
 import '../services/location.dart';
 import '../services/networking.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-const apiKey = '6a89b9580e70b960513cb9888386a521';
+import '../utilities/apikey.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -12,8 +13,6 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  double? latitude;
-  double? longitude;
   @override
   void initState() {
     super.initState();
@@ -24,11 +23,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void getLocationData() async {
     Location location = Location();
     await location.getCurrentLocation();
-    latitude = location.latitude;
-    longitude = location.longitude;
     NetworkHelper ntw = NetworkHelper(
       url:
-          'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey',
+          'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=$kapiKey&units=metric',
     );
     var weatherData = await ntw.getData();
     print(weatherData);
@@ -48,7 +45,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SpinKitDoubleBounce(
+        child: SpinKitWanderingCubes(
           color: Colors.white,
           size: 100.0,
         ),
